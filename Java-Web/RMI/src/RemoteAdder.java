@@ -13,6 +13,6 @@ public class RemoteAdder extends UnicastRemoteObject implements PrintGreetings {
 
     @Override
     public String printGreeting() throws RemoteException {
-        return "Namaskar! Welcome to the Dwiadh Terminal. :)";
+        return "Namaskar! Welcome to the Dwiadh Terminal :)";
     }
 }

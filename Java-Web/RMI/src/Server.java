@@ -12,9 +12,7 @@ public class Server {
         try {
             PrintGreetings sharingObject = new RemoteAdder();
             Naming.rebind("rmi://localhost:5000/sonoo", sharingObject);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
+        } catch (RemoteException | MalformedURLException e) {
             e.printStackTrace();
         }
 
