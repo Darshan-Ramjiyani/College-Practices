@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930026233237",
+    "project_id": "dspatel-firebase",
+    "storage_bucket": "dspatel-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930026233237:android:20cc782f84e26eded4aa9c",
+        "android_client_info": {
+          "package_name": "com.dsp.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930026233237-3fldd78t6q2hh8ngh1b239srt2rm65vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW86LCop6KlXM19xPrCRiV9_l-H1B6eRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930026233237-3fldd78t6q2hh8ngh1b239srt2rm65vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

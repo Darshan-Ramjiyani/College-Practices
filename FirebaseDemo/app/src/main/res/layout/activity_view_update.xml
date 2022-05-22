@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewUpdate">
+
+    <TableLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="5sp"
+        android:layout_gravity="center"
+        android:layout_margin="5sp">
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update Records"
+                android:textColor="@color/purple_700"
+                android:fontFamily="serif"
+                android:textFontWeight="600"
+                android:textAlignment="center"
+                android:textSize="25sp"/>
+
+        </TableRow>
+
+        <TableRow
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:layout_column="0"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:gravity="left"
+                android:id="@+id/name"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="textPersonName" />
+
+        </TableRow>
+
+        <TableRow
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="Email Address"
+                android:layout_column="0"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:gravity="left"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"/>
+
+        </TableRow>
+
+        <TableRow
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="Username"
+                android:layout_column="0"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:gravity="left"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:id="@+id/username"/>
+
+        </TableRow>
+
+        <TableRow
+
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:text="Password"
+                android:layout_column="0"
+                android:gravity="right"
+                android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:gravity="left"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:id="@+id/passwd"/>
+
+        </TableRow>
+
+        <TableRow
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Save Changes"
+                android:drawableLeft="@drawable/ic_save"
+                android:textAllCaps="false"
+                android:onClick="saveChanges" />
+
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Next Record"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/ic_right_arrow"
+                android:onClick="showNextRecord" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_left_arrow"
+                android:onClick="showPreviousRecord"
+                android:text="Previous Record"
+                android:textAllCaps="false" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_delete"
+                android:onClick="deleteRecords"
+                android:text="Delete Record"
+                android:textAllCaps="false" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginVertical="20sp"
+                android:text="© DSP"
+                android:textAlignment="center"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
