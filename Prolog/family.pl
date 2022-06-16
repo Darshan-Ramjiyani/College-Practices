@@ -1,43 +1,43 @@
-male(Valjibhai).
-male(Muljibhai).
-male(Arjanbhai).
-male(Ravjibhai).
-male(Naranbhai).
-male(Vijay).
-male(Vivek).
+male(valjibhai).
+male(muljibhai).
+male(arjanbhai).
+male(ravjibhai).
+male(naranbhai).
+male(vijay).
+male(vivek).
 
 
-female(Amratben).
-female(Kantaben).
-female(Amrutben).
-female(Premilaben).
-female(Jasuben).
+female(amratben).
+female(kantaben).
+female(amrutben).
+female(premilaben).
+female(jasuben).
 
 
-parent(Valjibhai,Muljibhai).
-parent(Amratben,Muljibhai).
+parent(valjibhai,muljibhai).
+parent(amratben,muljibhai).
 
-parent(Muljibhai,Naranbhai).
-parent(Kantaben,Naranbhai).
+parent(muljibhai,naranbhai).
+parent(kantaben,naranbhai).
 
-parent(Muljibhai,Ravjibhai).
-parent(Kantaben,Ravjibhai).
+parent(muljibhai,ravjibhai).
+parent(kantaben,ravjibhai).
 
-parent(Arjanbhai,Premilaben).
-parent(Amrutben,Premilaben).
+parent(arjanbhai,premilaben).
+parent(amrutben,premilaben).
 
-parent(Arjanbhai,Jasuben).
-parent(Amrutben,Jasuben).
+parent(arjanbhai,jasuben).
+parent(amrutben,jasuben).
 
-parent(Ravjibhai,Vijay).
-parent(Premilaben,Vijay).
+parent(ravjibhai,vijay).
+parent(premilaben,vijay).
 
 
-parent(Ravjibhai,Vivek).
-parent(Premilaben,Vivek).
+parent(ravjibhai,vivek).
+parent(premilaben,vivek).
 
-father(X,Y):-parent(X,Y),male(X).
-mother(X,Y):-parent(X,Y),female(X).
+pitashree(X,Y):-parent(X,Y),male(X).
+matashree(X,Y):-parent(X,Y),female(X).
 
 bhrata(X,Y):-parent(Z,X),parent(Z,Y),male(X),X\==Y.
 bhagini(X,Y):-parent(Z,X),parent(Z,Y),female(X),X\==Y.
