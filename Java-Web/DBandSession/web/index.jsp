@@ -35,7 +35,7 @@
 
             <div class="row justify-content-center align-items-center px-2">
                 <div class="col-md-4 col-12 p-3 justify-items-space-evenly">
-                    <form name="signinForm method="POST" action="Verifier">
+                    <form name="signinForm" method="POST" action="Verifier">
                         <div class="form-group">
                             <label for="signinFormUsername" class="text-light"
                                    >Username</label

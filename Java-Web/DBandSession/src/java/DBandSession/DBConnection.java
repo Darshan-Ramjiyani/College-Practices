@@ -14,9 +14,9 @@ public class DBConnection {
     protected Connection dataBaseConnection;
 
     public DBConnection() {
-        this.url = "jdbc:postgresql://localhost:5432/JavaAssignment";
+        this.url = "jdbc:postgresql://localhost:5432/java_web";
         this.user = "postgres";
-        this.password = "dsp@377";
+        this.password = "dsp@3277426";
     }
 
     public Connection getDatabaseConnection() {
@@ -27,7 +27,11 @@ public class DBConnection {
         boolean returnValue = false;
 
         try {
+            Class.forName("org.postgresql.Driver");
             this.dataBaseConnection = DriverManager.getConnection(this.url, this.user, this.password);
+        }catch(ClassNotFoundException e)
+        {
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

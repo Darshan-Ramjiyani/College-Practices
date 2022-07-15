@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.PrintWriter;
 
 /**
  *
@@ -20,28 +21,40 @@ public class Verifier extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException, SQLException, Exception
     {
+        PrintWriter out = response.getWriter();
+        out.print("Verifying details...");
         String redirectPath = "";
         String action = request.getParameter("action");
         
+        UserTable userTable = new UserTable();
+            
         if(action != null && action.equals("Signup"))
         {
-            HttpSession session = request.getSession();
+            User user = new User(
+                request.getParameter("signupFormFullname"),
+                request.getParameter("signupFormGender"),
+                request.getParameter("signupFormEmail"),
+                request.getParameter("signupFormPassword"),
+                request.getParameter("signupFormDOB")
+            );
+            System.err.println("DOB : " + 
+                request.getParameter("signupFormDOB"));
+            redirectPath = userTable.insert(user) > 0 ? "dashboard.jsp" : "signup?error=Unable register you at this moment.";
+            ResultSet id = userTable.select("uid", "email='"+request.getParameter("signupFormEmail")+"'");
+            if(id.next())
+            {
+                HttpSession session = request.getSession();
+                session.setAttribute("userid", id.getInt("uid"));
+                session.setAttribute("isLoggedIn", true);
+            }
+            else
+                redirectPath = "index.jsp?error=Unable to verify your signup details.";
             
-            session.setAttribute("fullname", request.getParameter("signupFormFullName"));
-            session.setAttribute("username", request.getParameter("signupFormUsername"));
-            session.setAttribute("password", request.getParameter("signupFormPassword"));
-            session.setAttribute("isLoggedIn", true);
-            
-            redirectPath = "dashboard.jsp";
-            
-            session.setMaxInactiveInterval(1500);
         }
         else if(action != null && action.equals("Signin"))
         {
-            HttpSession session = request.getSession();
             String password = null;
-            UserTable ut = new UserTable();
-            ResultSet rs = ut.select("password", "username='"+request.getParameter("signinFormUsername")+"'");
+            ResultSet rs = userTable.select("password", "email='"+request.getParameter("signinFormUsername")+"'");
             
             if(rs.next())
             {
@@ -49,12 +62,13 @@ public class Verifier extends HttpServlet
                 
                 if(password.equals(request.getParameter("signinFormPassword")))
                 {
-                    ResultSet id = ut.select("id", "username='"+request.getParameter("signinFormUsername")+"'");
+                    ResultSet id = userTable.select("uid", "email='"+request.getParameter("signinFormUsername")+"'");
                     redirectPath = "dashboard.jsp";
                     
                     if(id.next())
                     {
-                        session.setAttribute("userid", id.getInt("id"));
+                        HttpSession session = request.getSession();
+                        session.setAttribute("userid", id.getInt("uid"));
                         session.setAttribute("isLoggedIn", true);
                     }
                     else

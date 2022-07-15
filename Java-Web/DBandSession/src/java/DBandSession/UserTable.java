@@ -13,14 +13,15 @@ public class UserTable {
 
     private String tableName;
     private DBConnection connection;
-    private final String QUERY = "INSERT INTO users(full_name, gender, phone_number, address, hobbies, username, password)"
-            + "VALUES (?,?,?, ?, ?, ?, ?);";
+    private String QUERY;
 
     public UserTable() throws Exception {
-        this.tableName = "users";
+        this.tableName = "\"public\".\"user\"";
+        this.QUERY = "INSERT INTO "+this.tableName+" (full_name, email, password, gender, dateofbirth)"
+            + " VALUES (?, ?, ?, ?, ?);";
         this.connection = new DBConnection();
         if (!this.connection.setDatabaseConnection()) {
-            throw new Exception();
+            throw new Exception("Can not establish connection to the database.");
         }
     }
 
@@ -28,13 +29,16 @@ public class UserTable {
         try {
             PreparedStatement statement = this.connection.getDatabaseConnection().prepareStatement(QUERY);
             statement.setString(1, userdata.getFullName());
-            statement.setString(2, userdata.getGender());
-            statement.setString(3, userdata.getPhoneNumber());
-            statement.setString(4, userdata.getAddress());
-            statement.setString(5, userdata.getHobbies());
-            statement.setString(6, userdata.getUsername());
-            statement.setString(7, userdata.getPassword());
+            statement.setString(2, userdata.getEmail());
+            statement.setString(3, userdata.getPassword());
+            statement.setString(4, userdata.getGender());
+            statement.setString(5, userdata.getDateofbirth());
+            System.out.println("SQL Query : "+statement.toString());
+            /*
+                INSERT INTO "user" (full_name, email, password, gender, dateofbirth) 
+	VALUES ('Darshan Ramjiyani', 'ahamdspatel@gmail.com', 'dsp@3770', 'Male', '2000-10-13')
 
+            */
             return statement.executeUpdate();
         } 
         catch (SQLException e) {

@@ -46,7 +46,7 @@
                 <div class="col-md-5 col-12 p-3 justify-items-space-evenly">
                     <form name="signinForm" method="POST" action="Verifier">
                         <div class="form-group">
-                            <label for="signinFormUsername" class="text-light"
+                            <label for="signinFormFullName" class="text-light"
                                    >Full Name</label
                             >
                             <input
@@ -82,56 +82,6 @@
                                 />
                         </div>
 
-                        <div class="form-group">
-                            <label
-                                for="signupFormHobbie"
-                                class="form-label text-light"
-                                >Hobbie</label
-                            ><br />
-                            <div class="form-check form-check-inline">
-                                <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    id="signupFormHobbieCLang"
-                                    name="signupFormHobbie"
-                                    value="C Language"
-                                    />
-                                <label
-                                    class="form-check-label text-light"
-                                    for="signupFormHobbieCLang"
-                                    >C Language</label
-                                >
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input
-                                    class="form-check-input text-danger"
-                                    type="checkbox"
-                                    id="signupFormHobbiePython"
-                                    name="signupFormHobbie"
-                                    value="Python"
-                                    />
-                                <label
-                                    class="form-check-label text-light"
-                                    for="signupFormHobbiePython"
-                                    >Python</label
-                                >
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input
-                                    class="form-check-input text-danger"
-                                    type="checkbox"
-                                    id="signupFormHobbieRuby"
-                                    name="signupFormHobbie"
-                                    value="Ruby"
-                                    />
-                                <label
-                                    class="form-check-label text-light"
-                                    for="signupFormHobbieRuby"
-                                    >Ruby</label
-                                >
-                            </div>
-                        </div>
-                        
                         <div class="form-group d-flex flex-row justify-content-center">
                             <div class="container-fluid no-bg">
                                 <div class="row">
@@ -145,37 +95,6 @@
                                             name="signupFormEmail"
                                             id="signupFormEmail"
                                             placeholder="Enter Email Address"
-                                            />
-                                    </div>
-                                    <div class="col-6">
-                                        <label for="signupFormPhoneNumber" class="text-light"
-                                               >Phone Number</label
-                                        >
-                                        <input
-                                            type="phone"
-                                            class="form-control"
-                                            name="signupFormPhoneNumber"
-                                            id="signupFormPhoneNumber"
-                                            placeholder="Enter Phone Number"
-                                            />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group d-flex flex-row justify-content-center">
-                            <div class="container-fluid no-bg">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <label for="signupFormUsername" class="text-light"
-                                               >Username</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="signupFormUsername"
-                                            id="signupFormUsername"
-                                            placeholder="Enter Username"
                                             />
                                     </div>
                                     <div class="col-6">
@@ -193,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group d-flex flex-row justify-content-center">
                             <input
                                 type="submit"
